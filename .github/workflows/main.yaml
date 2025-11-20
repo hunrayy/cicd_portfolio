@@ -33,7 +33,7 @@ jobs:
 
     - name: SSH into the instance created
       run: |
-        echo ${{ secrets.SSH_KEY }} > cicd_portfolio.pem
+        echo "${{ secrets.SSH_KEY }}" > "cicd_portfolio.pem"
         chmod 400 "cicd_portfolio.pem"
         ssh -i "cicd_portfolio.pem" -o StrictHostKeyChecking=no  ec2-user@ec2-13-48-138-47.eu-north-1.compute.amazonaws.com
 
