@@ -13,7 +13,7 @@ jobs:
         ls
 
     - name: Checkout to root directory
-    - uses: actions/checkout@v4
+      uses: actions/checkout@v4
 
     - name: List the directory again
       run: |
