@@ -21,4 +21,4 @@ jobs:
 
     - name: build a docker image using the dockerfile in root directory
       run: |
-        sudo docker build -t henryokiyi/cicd_portfolio
+        sudo docker build -t henryokiyi/cicd_portfolio .
