@@ -29,7 +29,7 @@ jobs:
 
     - name: push the image built to dockerhub
       run: |
-        sudo docker push henryokiy/cicd_portfolio
+        sudo docker push henryokiy/cicd_portfolio:v1
 
 
 
