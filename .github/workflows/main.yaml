@@ -7,6 +7,14 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     steps:
-    - name: say hello
+
+    - name: List the directory
       run: |
-        echo "hello"
+        ls
+
+    - name: Checkout to root directory
+    - uses: actions/checkout@v4
+
+    - name: List the directory again
+      run: |
+        ls
