@@ -22,3 +22,17 @@ jobs:
     - name: build a docker image using the dockerfile in root directory
       run: |
         sudo docker build -t henryokiyi/cicd_portfolio .
+
+    - name: Login to dockerhub
+      run: |
+        sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: verify if loggedin by listing all images
+      run: |
+        sudo docker images
+
+
+
+
+
+
