@@ -1,0 +1,12 @@
+name: "cicd_portfolio"
+on:
+  push:
+    branches:
+    - master
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+    - name: say hello
+    run: |
+      echo "hello"
