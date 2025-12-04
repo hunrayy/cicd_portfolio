@@ -44,7 +44,7 @@ jobs:
         sudo docker stop henryokiyi/cicd_portfolio || true
         docker rm -f henryokiyi/cicd_portfolio || true
         sudo docker pull henryokiyi/cicd_portfolio
-        sudo docker run -d -p 1234:80 --name henryokiyi/cicdPortfolio henryokiyi/cicd_portfolio
+        sudo docker run -d -p 1234:80 --name cicdPortfolio henryokiyi/cicd_portfolio
 
 
 
