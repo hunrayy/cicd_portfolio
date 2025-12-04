@@ -38,6 +38,13 @@ jobs:
         chmod 400 "sshKey"
         ssh -i "sshKey" -o StrictHostKeyChecking=no ubuntu@13.60.157.145
         docker --version
+    
+    - name: Stop the previous docker container running, pull the new image and run it as a container
+      run: |
+        sudo docker stop henryokiyi/cicd_portfolio
+        sudo docker pull henryokiyi/cicd_portfolio
+        sudo docker run -d -p 1234:80 --name henryokiyi/cicd_portfolio henryokiyi/cicd_portfolio
+
 
 
 
