@@ -31,11 +31,37 @@ jobs:
       run: |
         sudo docker push henryokiyi/cicd_portfolio:latest
 
+
     - name: SSH into the instance created
       run: |
-        echo "${{ secrets.SSH_KEY }}" > "cicd_portfolio.pem"
-        chmod 400 "cicd_portfolio.pem"
-        ssh -i "cicd_portfolio.pem" -o StrictHostKeyChecking=no  ec2-user@ec2-13-48-138-47.eu-north-1.compute.amazonaws.com
+        echo "${{ secrets.SSH_KEY }}" >> "sshKey"
+        chmod 400 "sshKey"
+        ssh -i "sshKey" -o StrictHostKeyChecking=0 ubuntu@13.60.157.145
+        docker --version
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # - name: SSH into the instance created
+    #   run: |
+    #     echo "${{ secrets.SSH_KEY }}" > "cicd_portfolio.pem"
+    #     chmod 400 "cicd_portfolio.pem"
+    #     ssh -i "cicd_portfolio.pem" -o StrictHostKeyChecking=no  ec2-user@ec2-13-48-138-47.eu-north-1.compute.amazonaws.com
 
 
 
