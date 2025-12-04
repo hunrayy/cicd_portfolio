@@ -36,7 +36,7 @@ jobs:
       run: |
         echo "${{ secrets.SSH_KEY }}" >> "sshKey"
         chmod 400 "sshKey"
-        ssh -i "sshKey" -o StrictHostKeyChecking=0 ubuntu@13.60.157.145
+        ssh -i "sshKey" -o StrictHostKeyChecking=no ubuntu@13.60.157.145
         docker --version
 
 
