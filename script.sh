@@ -35,7 +35,7 @@ push_to_github_commands(){
 
     [ ! -d .git ] && git init
     git add .
-    git commit -m "$commitMessage"
+    git commit --allow-empty -m "$commitMessage"
     git push origin master
 }
 
