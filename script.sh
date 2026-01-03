@@ -52,10 +52,15 @@ push_to_github_commands(){
 
 
     
-    /usr/bin/git pull origin master --rebase 2>&1 | tee -a /home/u892791683/domains/cicd_portfolio/cron.log || exit 1
+   
+    # Make sure the working tree is clean before pull
+    /usr/bin/git reset --hard
 
-    /usr/bin/git push origin master 2>&1 | tee -a /home/u892791683/domains/cicd_portfolio/cron.log
+    # Pull latest remote changes (rebase)
+    /usr/bin/git pull origin master --rebase 2>&1 | tee -a $LOG_FILE || exit 1
 
+    # Push
+    /usr/bin/git push origin master 2>&1 | tee -a $LOG_FILE
 
 
 
