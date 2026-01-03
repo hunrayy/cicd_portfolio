@@ -32,3 +32,14 @@ hint: Updates were rejected because the tip of your current branch is behind
 hint: its remote counterpart. If you want to integrate the remote changes,
 hint: use 'git pull' before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+From github.com:hunrayy/cicd_portfolio
+ * branch            master     -> FETCH_HEAD
+error: cannot rebase: You have unstaged changes.
+error: Please commit or stash them.
+To github.com:hunrayy/cicd_portfolio.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'github.com:hunrayy/cicd_portfolio.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
