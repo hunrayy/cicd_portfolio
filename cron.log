@@ -44,3 +44,9 @@ hint: its remote counterpart. If you want to integrate the remote changes,
 hint: use 'git pull' before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ----- Cron run at 2026-01-03 23:45:05 -----
+From github.com:hunrayy/cicd_portfolio
+ * branch            master     -> FETCH_HEAD
+error: cannot rebase: You have unstaged changes.
+error: Please commit or stash them.
+To github.com:hunrayy/cicd_portfolio.git
+   1acac30..2efc788  master -> master
