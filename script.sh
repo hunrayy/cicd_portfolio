@@ -1,6 +1,19 @@
 #!/bin/sh
 
 
+
+export HOME=/home/u892791683
+export GIT_SSH_COMMAND='ssh -i /home/u892791683/.ssh/hostinger_key -o StrictHostKeyChecking=no'
+cd /home/u892791683/domains/cicd_portfolio || exit 1
+export PATH=/usr/bin:/bin
+
+
+# ----- Log file -----
+LOG_FILE=/home/u892791683/domains/cicd_portfolio/cron.log
+echo "----- Cron run at $(date '+%Y-%m-%d %H:%M:%S') -----" >> $LOG_FILE
+
+
+
 touch testStyle.css
 stylesheet=testStyle.css
 
@@ -33,13 +46,20 @@ push_to_github (){
 push_to_github_commands(){
     commitMessage=$1
 
-    [ ! -d .git ] && git init
-    git add .
-    git commit --allow-empty -m "$commitMessage"
-    git push origin master
+    [ ! -d .git ] && /usr/bin/git init
+    /usr/bin/git add .
+    /usr/bin/git commit --allow-empty -m "$commitMessage"
+
+
+    
+    /usr/bin/git pull origin master --rebase 2>&1 | tee -a /home/u892791683/domains/cicd_portfolio/cron.log || exit 1
+
+    /usr/bin/git push origin master 2>&1 | tee -a /home/u892791683/domains/cicd_portfolio/cron.log
+
+
+
+
 }
-
-
 
 
 
