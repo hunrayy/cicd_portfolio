@@ -67,3 +67,9 @@ error: cannot rebase: You have unstaged changes.
 error: Please commit or stash them.
 To github.com:hunrayy/cicd_portfolio.git
    a59e9be..64e8ad2  master -> master
+From github.com:hunrayy/cicd_portfolio
+ * branch            master     -> FETCH_HEAD
+error: cannot rebase: You have unstaged changes.
+error: Please commit or stash them.
+To github.com:hunrayy/cicd_portfolio.git
+   64e8ad2..9c5e448  master -> master
