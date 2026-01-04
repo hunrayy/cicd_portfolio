@@ -1,6 +1,10 @@
 #!/bin/sh
 
 
+# Start SSH agent and add the key
+eval "$(ssh-agent -s)"
+ssh-add /home/u892791683/.ssh/hostinger_key
+
 
 export HOME=/home/u892791683
 export GIT_SSH_COMMAND='ssh -i /home/u892791683/.ssh/hostinger_key -o StrictHostKeyChecking=no'
