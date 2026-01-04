@@ -18,7 +18,7 @@ echo "----- Cron run at $(date '+%Y-%m-%d %H:%M:%S') -----" >> $LOG_FILE
 
 
 
-touch testStyle.css
+
 stylesheet=testStyle.css
 
 push_to_github (){
@@ -28,6 +28,8 @@ push_to_github (){
 
 
     if [ "$commitCount" = "first commit" ]; then
+        [ ! -f "$stylesheet" ] && touch "$stylesheet"
+
         #append to css 
         echo ".testing { background-color: red; }" >> $stylesheet
         push_to_github_commands "$commitMessage"
